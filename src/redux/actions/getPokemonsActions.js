@@ -12,14 +12,16 @@ export const getPokemonsActions = () => async dispatch => {
 	dispatch( getPokemons() );
 
 	try {
+
 		const promise = sample.map(async (id, index) => {
+			
 			const petition = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
 			const request = await petition.json();
 
 			const stats = request.stats.map(element => element.base_stat);
 		
 			const objectPokemon = {
-				img: `https://pokeres.bastionbot.org/images/pokemon/${id}.png`,
+				img: request.sprites.other['official-artwork'].front_default,
 				elements: request.types,
 				name: request.name,
 				abilities: request.abilities,

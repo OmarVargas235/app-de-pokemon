@@ -10,7 +10,6 @@ const Comparisons = ({ failure }) => {
 	const [search, setSearch] = useState('');
 	const [keyEnter, setKeyEnter] = useState(false);
 	const [dataSearch, setDataSearch] = useState([]);
-	const [addPokemonStats,setAddPokemonStats] = useState([]);
 	const [addPokemon,setAddPokemon] = useState([]);
 	
 	//Hook personalizado
@@ -37,8 +36,6 @@ const Comparisons = ({ failure }) => {
 				dataSearch={dataSearch}
 				addPokemon={addPokemon}
 				setAddPokemon={setAddPokemon}
-				addPokemonStats={addPokemonStats}
-				setAddPokemonStats={setAddPokemonStats}
 				failure={failure}
 			/>
 		</div>

@@ -12,7 +12,7 @@ const HomePage = ({ data, failure }) => (
 		<Title 
 			title='Welcome to PokemonAPP'
 		/>
-
+		
 		{
 			failure ? <Alert mesagge='Oops, Something has gone wrong, reload' />
 			: <div className="row">

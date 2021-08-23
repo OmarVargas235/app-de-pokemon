@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -28,10 +28,10 @@ const ComparisonsPage = props => {
 		dataSearch,
 		addPokemon,
 		setAddPokemon,
-		addPokemonStats,
-		setAddPokemonStats,
 		failure
 	} = props;
+
+	const [addPokemonStats, setAddPokemonStats] = useState([]);
 
 	return (
 		<InputComparisons>
@@ -54,7 +54,7 @@ const ComparisonsPage = props => {
 							setAddPokemon={setAddPokemon}
 						/> 
 					}
-
+					
 					<div className="row mb-4">
 						<PokemonsToCompare 
 							addPokemon={addPokemon}
@@ -62,12 +62,14 @@ const ComparisonsPage = props => {
 							setAddPokemonStats={setAddPokemonStats}
 							setAddPokemon={setAddPokemon}
 						/>
-				
+						
 						{
 							addPokemon.length > 0 
-							? <div className="col-12 col-sm-8 d-flex justify-content-end justify-content-lg-start">
-								<GraphStatistics stats={addPokemonStats} />
-							</div>
+							? <React.Fragment>
+								<div className="col-12 col-sm-8 d-flex justify-content-end justify-content-lg-start">
+									<GraphStatistics stats={addPokemonStats} />
+								</div>
+							</React.Fragment>
 							: null
 						}
 					</div>

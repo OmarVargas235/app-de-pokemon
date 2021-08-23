@@ -121,7 +121,8 @@ const GraphStatistics = ({ stats }) => {
 		if (stats === undefined) return;
 
 		if (stats.length === 6) {
-			setGraph(() => ({
+			
+			setGraph((graph) => ({		
 				...graph,
 				series: [
 					{
@@ -130,8 +131,10 @@ const GraphStatistics = ({ stats }) => {
 					}
 				]
 			}));
+
 		} else {
-			setGraph(() => ({
+
+			setGraph((graph) => ({
 				...graph,
 				series: [
 					...stats,

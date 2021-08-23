@@ -13,6 +13,7 @@ const PokemonsEvolutions = ({ history, evolutions, getPokemonClearActions, }) =>
 	const { setAddFavoriteStar, setActiveStar, setPokemonPrev } = useContext(MarkedStarContext);
 
 	const resetAndRedirect = index => {
+
 		const name = evolutions.evolutions.name[index];
 
 		setAddFavoriteStar(null);

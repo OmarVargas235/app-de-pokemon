@@ -8,16 +8,19 @@ const PokemonsToCompare = props => {
 	const { pokemonStats, addPokemon, addPokemonStats, setAddPokemonStats, setAddPokemon } = props;
 	
 	useEffect(() => {
+
 		/*
 			Este condicional se encarga de que las estadisticas del primer objeto del 
 			array 'addPokemonStats', no esten vacias, para despues ir agregando el resto.
 		*/
+
 		(addPokemon.length > 0 && pokemonStats.length > 0)
 		&& setAddPokemonStats([
 			...addPokemonStats, 
 			{name: `${addPokemon[addPokemon.length - 1].name}` , data: pokemonStats}
 		]);
-	}, [pokemonStats]);
+
+	}, [pokemonStats, setAddPokemonStats]);
 
 	const deletePokemonAndStats = el => {
 		const copyAddPokemon = addPokemon;

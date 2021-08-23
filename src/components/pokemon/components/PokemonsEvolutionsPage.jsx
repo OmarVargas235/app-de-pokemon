@@ -16,15 +16,16 @@ const EvolutionStyles = styled.div`
 `;
 
 const PokemonsEvolutionsPage = ({ resetAndRedirect, evolutions }) => (
-	<div className="row justify-content-center justify-content-sm-start"> 
+	<div className="row justify-content-center justify-content-sm-start">
+		
 		{
 			evolutions.evolutions.evolutionsId.map((id, index) => (
 				<div className="col-8 col-sm-4 mb-4" key={index}>
 					<EvolutionStyles 
 						onClick={ () => resetAndRedirect(index) }
 					>
-						<img className="img-fluid" 
-						src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} 
+						<img className="img-fluid"
+						src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
 						alt={evolutions.evolutions.name[index]}
 						/>
 					</EvolutionStyles>

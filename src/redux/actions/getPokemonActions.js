@@ -16,6 +16,7 @@ export const getPokemonSearchActions = id => async dispatch => {
 	dispatch( getPokemonSearch() );
 
 	try {
+		
 		const petition = await fetch(`https://pokeapi.co/api/v2/pokemon/${
 			isNaN(parseInt(id)) ? id.toLowerCase() : id }`);
 		const request = await petition.json();
@@ -23,7 +24,7 @@ export const getPokemonSearchActions = id => async dispatch => {
 		const stats = request.stats.map(element => element.base_stat);
 
 		const objectPokemon = {
-			img: `https://pokeres.bastionbot.org/images/pokemon/${request.id}.png`,
+			img: request.sprites.other['official-artwork'].front_default,
 			elements: request.types,
 			name: request.name,
 			abilities: request.abilities,
@@ -72,6 +73,7 @@ export const getPokemonClearActions = () => ({
 // Obtener una descripcion del pokemon por id
 
 export const getPokemonDescriptionActions = id => async dispatch => {
+
 	dispatch( getPokemonDescription() );
 
 	try {

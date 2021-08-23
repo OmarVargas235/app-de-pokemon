@@ -7,7 +7,7 @@ import CardPokemon from '../../../layauts/CardPokemon';
 const PokemonsRecommendPage = ({ pokemonRecommended }) => (
 	<React.Fragment>
 		<h2 className="mt-5 mb-4">You might also be interested</h2>
-
+		
 		{
 			pokemonRecommended.length === 0 ? <div style={{position: 'relative'}}><Spinner /></div>
 			: <div className="row">

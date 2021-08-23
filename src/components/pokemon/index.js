@@ -35,7 +35,9 @@ const Pokemon = props => {
 		pokemon en el que se encuentra actualmente.
 	*/
 	useEffect(() => {
+
 		if (Object.keys(data).length === 0) {
+
 			getPokemonSearchActions(match.params.id);
 			getPokemonDescriptionActions(match.params.id);
 			getEvolutionsActions(match.params.id);
@@ -47,6 +49,7 @@ const Pokemon = props => {
 		Este useEffect se encarga de obtener (actualizar cuando cambia a otro pokemon) la descripcion de lo que hace el pokemon.
 	*/
 	useEffect(() => {
+		
 		if (Object.keys(data).length === 0) return;
 
 		getPokemonDescriptionActions(data.id); 

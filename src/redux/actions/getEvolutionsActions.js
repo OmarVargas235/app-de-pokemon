@@ -11,6 +11,7 @@ export const getEvolutionsActions = id => async dispatch => {
 	let evolutions = [];
 
 	try {
+
 		const petitionSpecies = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
 		const requestSpecies = await petitionSpecies.json();
 

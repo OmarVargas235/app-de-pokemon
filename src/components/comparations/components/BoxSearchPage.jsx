@@ -37,9 +37,10 @@ const BoxSearchPage = ({ dataSearch, addPokemon, getPokemonSearchActions, setAdd
 			dataSearch.map(el => (
 				<div className="ComparisonsPage__evolution mb-3" key={el.id}>
 					<img 
-						src={`https://pokeres.bastionbot.org/images/pokemon/${el.id}.png`} 
+						src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${el.id}.png`}
 						alt={el.name} className="img-fluid"
 						onClick={() => {
+							
 							/*Evita que se agregue mas de 4 pokemons y polemons repetidos*/
 							if (addPokemon.length > 3 || addPokemon.some(e => e.id === el.id)) return;
 

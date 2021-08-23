@@ -69,6 +69,7 @@ const ContainerStyles = styled.div`
 
 const PokemonsToComparePage = ({ addPokemon, deletePokemonAndStats }) => (
 	<ContainerStyles className="col-12 col-sm-4">
+
 		<TransitionGroup className="d-flex flex-column align-items-center">		
 			{
 				addPokemon.map(el => (
@@ -86,7 +87,7 @@ const PokemonsToComparePage = ({ addPokemon, deletePokemonAndStats }) => (
 								onClick={ () => deletePokemonAndStats(el) }
 							>X</div>
 							<img 
-								src={`https://pokeres.bastionbot.org/images/pokemon/${el.id}.png`} 
+								src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${el.id}.png`} 
 								alt={el.name}
 								className="img-fluid"
 							/>

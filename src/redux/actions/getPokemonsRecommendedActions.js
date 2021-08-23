@@ -19,7 +19,7 @@ export const getPokemonsRecommendedActions = arrPokemos => dispatch => {
 			const stats = request.stats.map(element => element.base_stat);
 		
 			const objectPokemon = {
-				img: `https://pokeres.bastionbot.org/images/pokemon/${id}.png`,
+				img: request.sprites.other['official-artwork'].front_default,
 				elements: request.types,
 				name: request.name,
 				abilities: request.abilities,
