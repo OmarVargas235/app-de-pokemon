@@ -33,12 +33,12 @@ const App = () => (
 
 			<div className="container">
 				<Switch>
-						<Route  path='/pokemon/home' component={Home} />
-						<Route  path='/pokemon/favorites' component={Favorites} />
-						<Route  path='/pokemon/comparisons' component={Comparisons} />
-						<Route  path='/pokemon/search/:name' component={PokemonSearch} />
-						<Route  path='/pokemon/pokemon/:id' component={Pokemon} />
-						<Redirect from='/' to="/pokemon/home" />
+					<Route  path='/pokemon/home' component={Home} />
+					<Route  path='/pokemon/favorites' component={Favorites} />
+					<Route  path='/pokemon/comparisons' component={Comparisons} />
+					<Route  path='/pokemon/search/:name' component={PokemonSearch} />
+					<Route  path='/pokemon/pokemon/:id' component={Pokemon} />
+					<Redirect from='/' to="/pokemon/home" />
 				</Switch>
 			</div>
 		</Router>
